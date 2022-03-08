@@ -1,0 +1,30 @@
+body {
+  background-color: cadetblue;
+}
+div {
+  padding-top: 10px;
+  background-color: aliceblue;
+  position: relative;
+  width: 600px;
+  height: 300px;
+  margin-left: 28%;
+  height: 180px;
+  border-radius: 25px;
+}
+h3 {
+  margin-top: 0px;
+  margin-left: 15px;
+  margin-bottom: 0%;
+}
+input {
+  margin-top: 0%;
+  margin-left: 15px;
+  margin-bottom: 0px;
+}
+input.button {
+  margin-left: 15px;
+  background-color: purple;
+  margin-top: 5px;
+  text-align: center;
+  color: whitesmoke;
+}
