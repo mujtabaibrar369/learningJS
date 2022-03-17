@@ -1,0 +1,58 @@
+body {
+  background-color: cadetblue;
+}
+div {
+  padding-top: 10px;
+  background-color: aliceblue;
+  position: relative;
+  width: 600px;
+  height: 300px;
+  margin-left: 28%;
+  height: 180px;
+  border-radius: 25px;
+}
+h3 {
+  margin-top: 0px;
+  margin-left: 15px;
+  margin-bottom: 0%;
+}
+input {
+  margin-top: 0%;
+  margin-left: 15px;
+  margin-bottom: 0px;
+}
+input.button {
+  margin-left: 15px;
+  background-color: purple;
+  margin-top: 5px;
+  text-align: center;
+  color: whitesmoke;
+}
+#records {
+  margin-top: 10px;
+  height: auto;
+}
+div.popup{
+  margin-top: 10px;
+  height: auto;
+  border-radius: 0%;
+  display: none;
+}
+p{
+  padding-left: 10px;
+}
+header{
+  margin-top: -10px;
+  height: 20px;
+  background-color: purple;
+}
+#popupbutton{
+ 
+  background-color: purple;
+  text-align: center;
+  margin-left: 80%;
+  height: 30px;
+  width: 80px;
+  border-radius: 10%;
+  margin-bottom: 10px;
+}
