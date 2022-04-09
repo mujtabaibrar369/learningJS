@@ -25,3 +25,23 @@ button.addEventListener('click', function () {
   document.getElementById('age').value = '';
   document.getElementById('email').value = '';
 });
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById('myInput');
+  filter = input.value.toUpperCase();
+  table = document.getElementById('customers');
+  tr = table.getElementsByTagName('tr');
+  for (i = 0; i < row; i++) {
+    for (let j = 0; j < 5; j++) {
+      td = tr[i].getElementsByTagName('td')[j];
+      if (td) {
+        txtValue = td.textContent || td.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = '';
+        } else {
+          tr[i].style.display = 'none';
+        }
+      }
+    }
+  }
+}
