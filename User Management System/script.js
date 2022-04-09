@@ -17,8 +17,7 @@ document.getElementById('button').addEventListener('click', function () {
       age: age,
     };
     record.push(data);
-    console.log(data);
-    var temp = document.getElementById('records');
+    let temp = document.getElementById('records');
     for (let i = 0; i <= record.length; i++) {
       temp.innerHTML +=
         'Name : ' + record[i].username + '  Age : ' + record[i].age + '<br>';
@@ -26,7 +25,7 @@ document.getElementById('button').addEventListener('click', function () {
   }
 });
 document.getElementById('popupbutton').addEventListener('click', function () {
-  var temp = document.getElementById('records');
+  let temp = document.getElementById('records');
   errorPopup.classList.add('hidden');
   overlay.classList.add('hidden');
   for (let i = 0; i <= record.length; i++) {
