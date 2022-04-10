@@ -1,5 +1,6 @@
 body {
   background-color: cadetblue;
+  font-family: Arial, Helvetica, sans-serif;
 }
 div {
   padding-top: 10px;
@@ -28,9 +29,38 @@ input.button {
   text-align: center;
   color: whitesmoke;
 }
-#records {
-  margin-top: 10px;
+#customers {
+  margin-top: 13px;
+  border-collapse: collapse;
+  padding-top: 10px;
+  background-color: aliceblue;
+  position: relative;
+  width: 600px;
   height: auto;
+  margin-left: 28%;
+  border-radius: 25px;
+}
+
+#customers td,
+#customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr {
+  background-color: #f2f2f2;
+}
+
+#customers tr:hover {
+  background-color: #ddd;
+}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: purple;
+  color: white;
 }
 #popup {
   font-size: 1rem;
@@ -79,6 +109,12 @@ div.search {
   margin-top: 10px;
   font-weight: bold;
 }
-/* .searchbar {
-  float: right;
-} */
+#myInput {
+  margin-top: 13px;
+  margin-left: 40%;
+  background-position: 10px 10px;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
