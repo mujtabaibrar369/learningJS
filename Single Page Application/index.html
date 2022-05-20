@@ -1,0 +1,29 @@
+<!doctype html>
+  <head>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="block" id="form">
+      <h3>Username</h3>
+      <input type="text" class="input" id="username">
+      <h3>Age</h3>
+      <input type="text" class="input" id="age">
+      <br />
+      <input class="button" type="button" value="Add User" id="button">
+    </div> 
+        <input type="text" id="myInput"  placeholder="Search" title="Type in a name" onkeyup="myFunction()">
+    <table id="customers" class="customers">
+        <tr>
+          <th> Name</td>
+          <th>Age</td>
+        </tr>
+    <div class="popup hidden" id="popup">
+      <header>
+      </header>
+      <p>Error! Invalid Input</p>
+      <input type="button" class="popupbutton" id="popupbutton" value="close">
+    </div>
+    <div class="overlay hidden"></div>
+    <script src="script.js"></script>
+  </body>
+</html>
