@@ -1,29 +1,40 @@
 let errorPopup = document.querySelector('.popup');
+let viewData=document.querySelector('.data');
 const overlay = document.querySelector('.overlay');
 let row = 1;
 let display = document.getElementById('customers');
 document.getElementById('button').addEventListener('click', function () {
-  var username = document.getElementById('username').value;
+  var username = document.getElementById('name').value;
   var age = document.getElementById('age').value;
-  if (username == '' || age == '') {
+  var income = document.getElementById('income').value;
+  if (username == '' || age == ''|| income=='') {
     overlay.classList.remove('hidden');
     errorPopup.classList.remove('hidden');
   } else {
     let newRow = display.insertRow(row);
     let cell1 = newRow.insertCell(0);
     let cell2 = newRow.insertCell(1);
+    let cell3 = newRow.insertCell(2);
     cell1.innerHTML = username;
     cell2.innerHTML = age;
+    cell3.innerHTML = income;
     row++;
-    document.getElementById('username').value = '';
+    document.getElementById('name').value = '';
     document.getElementById('age').value = '';
+    document.getElementById('income').value = '';
   }
 });
 document.getElementById('popupbutton').addEventListener('click', function () {
-  let temp = document.getElementById('records');
   errorPopup.classList.add('hidden');
   overlay.classList.add('hidden');
 });
+document.getElementById('viewbutton').addEventListener('click', function () {
+errorPopup.classList.add('hidden');
+ viewData.classList.remove('hidden');
+})
+document.getElementById('closeuser').addEventListener('click', function () {
+  viewData.classList.add('hidden');
+})
 function myFunction() {
   var input, filter, table, tr, td, txtValue;
   input = document.getElementById('myInput');
