@@ -15,9 +15,13 @@ document.getElementById('button').addEventListener('click', function () {
     let cell1 = newRow.insertCell(0);
     let cell2 = newRow.insertCell(1);
     let cell3 = newRow.insertCell(2);
+    let cell4 = newRow.insertCell(3);
+    let cell5 = newRow.insertCell(4);
     cell1.innerHTML = username;
     cell2.innerHTML = age;
     cell3.innerHTML = income;
+    cell5.innerHTML = "<img src='edit.png' style='display: inline;' width='40px'></img>"
+    cell5.innerHTML+="<img src='filled-trash.png' style='display: inline;' width='40px'></img>"
     row++;
     document.getElementById('name').value = '';
     document.getElementById('age').value = '';
@@ -52,4 +56,4 @@ function myFunction() {
       }
     }
   }
-}
+};
