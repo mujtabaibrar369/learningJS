@@ -1,5 +1,5 @@
 let errorPopup = document.querySelector('.popup');
-let viewData=document.querySelector('.data');
+let viewData = document.querySelector('.data');
 const overlay = document.querySelector('.overlay');
 let row = 1;
 let display = document.getElementById('customers');
@@ -7,7 +7,7 @@ document.getElementById('button').addEventListener('click', function () {
   var username = document.getElementById('name').value;
   var age = document.getElementById('age').value;
   var income = document.getElementById('income').value;
-  if (username == '' || age == ''|| income=='') {
+  if (username == '' || age == '' || income == '') {
     overlay.classList.remove('hidden');
     errorPopup.classList.remove('hidden');
   } else {
@@ -20,8 +20,12 @@ document.getElementById('button').addEventListener('click', function () {
     cell1.innerHTML = username;
     cell2.innerHTML = age;
     cell3.innerHTML = income;
-    cell5.innerHTML = "<img src='edit.png' style='display: inline;' width='40px'></img>"
-    cell5.innerHTML+="<img src='filled-trash.png' style='display: inline;' width='40px'></img>"
+    cell5.innerHTML =
+      "<input type='button' id='addexpense' value='Add expense'>";
+    cell5.innerHTML +=
+      "<input type='button' id='viewexpense' value='View All Expenses'>";
+    addExpense();
+    viewExpense();
     row++;
     document.getElementById('name').value = '';
     document.getElementById('age').value = '';
@@ -33,12 +37,12 @@ document.getElementById('popupbutton').addEventListener('click', function () {
   overlay.classList.add('hidden');
 });
 document.getElementById('viewbutton').addEventListener('click', function () {
-errorPopup.classList.add('hidden');
- viewData.classList.remove('hidden');
-})
+  errorPopup.classList.add('hidden');
+  viewData.classList.remove('hidden');
+});
 document.getElementById('closeuser').addEventListener('click', function () {
   viewData.classList.add('hidden');
-})
+});
 function myFunction() {
   var input, filter, table, tr, td, txtValue;
   input = document.getElementById('myInput');
@@ -56,4 +60,14 @@ function myFunction() {
       }
     }
   }
-};
+}
+function addExpense() {
+  document.getElementById('addexpense').addEventListener('click', function () {
+    console.log('test');
+  });
+}
+function viewExpense() {
+  document.getElementById('viewexpense').addEventListener('click', function () {
+    console.log('test');
+  });
+}
