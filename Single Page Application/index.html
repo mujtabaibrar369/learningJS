@@ -8,12 +8,12 @@
   <body>
     <div class="block" id="form">
       <h3>Name</h3>
-      <input type="text" class="input" id="name">
+      <input type="text" class="input" id="name" placeholder="Name">
       <h3>Age</h3>
-      <input type="text" class="input" id="age">
+      <input type="text" class="input" id="age" placeholder="Age">
       <br />
       <h3>Income</h3>
-      <input type="text" class="input" id="income">
+      <input type="text" class="input" id="income" placeholder="Income">
       <br>
       <input class="button" type="button" value="Add User" id="button">
     </div> 
@@ -30,6 +30,17 @@
         </tr>
     </table>
   </section>
+  <div class="addexpensepopup hidden">
+    <h3></h3>
+      <input type="text" class="input" id="Expensetitle" placeholder="Expense tile">
+      <h3></h3>
+      <input type="text" class="input" id="expenseamount" placeholder="Expense Amount">
+      <br />
+      <h3></h3>
+      <input type="text" class="input" id="expensedate" placeholder="Expense date">
+      <br>
+      <input class="button" type="button" value="Add Expense" id="button">
+  </div>
   <input class="viewbutton" type="button" value="Manage Users" id="viewbutton">
     <div class="popup hidden" id="popup">
       <header>

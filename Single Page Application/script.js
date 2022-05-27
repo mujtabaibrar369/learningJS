@@ -1,6 +1,7 @@
 let errorPopup = document.querySelector('.popup');
 let viewData = document.querySelector('.data');
 const overlay = document.querySelector('.overlay');
+let addExpensePopup = document.querySelector('.addexpensepopup');
 let row = 1;
 let display = document.getElementById('customers');
 document.getElementById('button').addEventListener('click', function () {
@@ -23,8 +24,8 @@ document.getElementById('button').addEventListener('click', function () {
     cell5.innerHTML =
       "<input type='button' id='addexpense' value='Add expense'>";
     cell5.innerHTML +=
-      "<input type='button' id='viewexpense' value='View All Expenses'>";
-    addExpense();
+      "<input type='button' id='viewexpense' value='View Expenses'>";
+    addExpenses();
     viewExpense();
     row++;
     document.getElementById('name').value = '';
@@ -61,9 +62,12 @@ function myFunction() {
     }
   }
 }
-function addExpense() {
+function addExpenses() {
   document.getElementById('addexpense').addEventListener('click', function () {
-    console.log('test');
+    console.log(addExpensePopup);
+    addExpensePopup.classList.remove('hidden');
+    overlay.classList.add('hidden');
+    viewData.classList.add('hidden');
   });
 }
 function viewExpense() {
