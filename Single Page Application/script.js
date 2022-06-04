@@ -1,8 +1,8 @@
 let errorPopup = document.querySelector('.popup');
 let viewData = document.querySelector('.data');
 const overlay = document.querySelector('.overlay');
-const formDiv = document.getElementById('form');
 let addExpensePopup = document.querySelector('.addexpensepopup');
+const input = document.getElementById('form');
 let row = 1;
 let display = document.getElementById('customers');
 document.getElementById('button').addEventListener('click', function () {
@@ -67,8 +67,8 @@ function addExpenses() {
   document.getElementById('addexpense').addEventListener('click', function () {
     console.log(addExpensePopup);
     addExpensePopup.classList.remove('hidden');
-    formDiv.classList.add('hidden');
     viewData.classList.add('hidden');
+    input.classList.add('hidden');
   });
 }
 function viewExpense() {
