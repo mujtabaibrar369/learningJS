@@ -4,6 +4,7 @@ const overlay = document.querySelector('.overlay');
 let addExpensePopup = document.querySelector('.addexpensepopup');
 const input = document.getElementById('form');
 let row = 1;
+let erow = 0;
 let display = document.getElementById('customers');
 document.getElementById('button').addEventListener('click', function () {
   var username = document.getElementById('name').value;
@@ -45,6 +46,18 @@ document.getElementById('viewbutton').addEventListener('click', function () {
 document.getElementById('closeuser').addEventListener('click', function () {
   viewData.classList.add('hidden');
 });
+document.getElementById('goback').addEventListener('click', function () {
+  addExpensePopup.classList.add('hidden');
+  viewData.classList.remove('hidden');
+  input.classList.remove('hidden');
+});
+document
+  .getElementById('addexpensebutton')
+  .addEventListener('click', function () {
+    addExpensePopup.classList.add('hidden');
+    viewData.classList.remove('hidden');
+    input.classList.remove('hidden');
+  });
 function myFunction() {
   var input, filter, table, tr, td, txtValue;
   input = document.getElementById('myInput');
@@ -65,7 +78,6 @@ function myFunction() {
 }
 function addExpenses() {
   document.getElementById('addexpense').addEventListener('click', function () {
-    console.log(addExpensePopup);
     addExpensePopup.classList.remove('hidden');
     viewData.classList.add('hidden');
     input.classList.add('hidden');
