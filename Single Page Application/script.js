@@ -4,13 +4,17 @@ const overlay = document.querySelector('.overlay');
 let addExpensePopup = document.querySelector('.addexpensepopup');
 const input = document.getElementById('form');
 let row = 1;
-let erow = 0;
+let persons = [];
 let display = document.getElementById('customers');
 document.getElementById('button').addEventListener('click', function () {
-  var username = document.getElementById('name').value;
-  var age = document.getElementById('age').value;
-  var income = document.getElementById('income').value;
-  if (username == '' || age == '' || income == '') {
+  let person = {
+    username: document.getElementById('name').value,
+    age: document.getElementById('age').value,
+    income: document.getElementById('income').value,
+    expenses: [],
+  };
+  persons.push(person);
+  if (person.username == '' || person.age == '' || person.income == '') {
     overlay.classList.remove('hidden');
     errorPopup.classList.remove('hidden');
   } else {
@@ -20,12 +24,15 @@ document.getElementById('button').addEventListener('click', function () {
     let cell3 = newRow.insertCell(2);
     let cell4 = newRow.insertCell(3);
     let cell5 = newRow.insertCell(4);
-    cell1.innerHTML = username;
-    cell2.innerHTML = age;
-    cell3.innerHTML = income;
-    cell5.innerHTML =
+    let cell6 = newRow.insertCell(5);
+    cell1.innerHTML = row;
+    cell2.innerHTML = persons[row - 1].username;
+    cell3.innerHTML = persons[row - 1].age;
+    cell4.innerHTML = persons[row - 1].income;
+    cell5.innerHTML += '';
+    cell6.innerHTML +=
       "<input type='button' id='addexpense' value='Add expense'>";
-    cell5.innerHTML +=
+    cell6.innerHTML +=
       "<input type='button' id='viewexpense' value='View Expenses'>";
     addExpenses();
     viewExpense();
@@ -55,17 +62,18 @@ document
   .getElementById('addexpensebutton')
   .addEventListener('click', function () {
     addExpensePopup.classList.add('hidden');
+
     viewData.classList.remove('hidden');
     input.classList.remove('hidden');
   });
-function myFunction() {
+function dynamicallySearch() {
   var input, filter, table, tr, td, txtValue;
   input = document.getElementById('myInput');
   filter = input.value.toUpperCase();
   table = document.getElementById('customers');
   tr = table.getElementsByTagName('tr');
   for (let i = 0; i < row; i++) {
-    td = tr[i].getElementsByTagName('td')[0];
+    td = tr[i].getElementsByTagName('td')[1];
     if (td) {
       txtValue = td.textContent || td.innerText;
       if (txtValue.toUpperCase().indexOf(filter) > -1) {
