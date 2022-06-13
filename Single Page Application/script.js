@@ -8,6 +8,7 @@ let persons = [];
 let display = document.getElementById('customers');
 document.getElementById('button').addEventListener('click', function () {
   let person = {
+    id: Math.floor(Math.random() * 1000),
     username: document.getElementById('name').value,
     age: document.getElementById('age').value,
     income: document.getElementById('income').value,
@@ -25,17 +26,17 @@ document.getElementById('button').addEventListener('click', function () {
     let cell4 = newRow.insertCell(3);
     let cell5 = newRow.insertCell(4);
     let cell6 = newRow.insertCell(5);
-    cell1.innerHTML = row;
+    cell1.innerHTML = persons[row - 1].id;
     cell2.innerHTML = persons[row - 1].username;
     cell3.innerHTML = persons[row - 1].age;
     cell4.innerHTML = persons[row - 1].income;
     cell5.innerHTML += '';
-    cell6.innerHTML +=
-      "<input type='button' id='addexpense' value='Add expense'>";
-    cell6.innerHTML +=
-      "<input type='button' id='viewexpense' value='View Expenses'>";
-    addExpenses();
-    viewExpense();
+    cell6.innerHTML += `<input type='button' onclick = "addExpenses(this)" id='${
+      persons[row - 1].id
+    }' value='Add expense'>`;
+    cell6.innerHTML += `<input type='button' onclick = "viewExpense(this)" id='${
+      persons[row - 1].id
+    }' value='View Expense'>`;
     row++;
     document.getElementById('name').value = '';
     document.getElementById('age').value = '';
@@ -58,14 +59,6 @@ document.getElementById('goback').addEventListener('click', function () {
   viewData.classList.remove('hidden');
   input.classList.remove('hidden');
 });
-document
-  .getElementById('addexpensebutton')
-  .addEventListener('click', function () {
-    addExpensePopup.classList.add('hidden');
-
-    viewData.classList.remove('hidden');
-    input.classList.remove('hidden');
-  });
 function dynamicallySearch() {
   var input, filter, table, tr, td, txtValue;
   input = document.getElementById('myInput');
@@ -84,15 +77,16 @@ function dynamicallySearch() {
     }
   }
 }
-function addExpenses() {
-  document.getElementById('addexpense').addEventListener('click', function () {
-    addExpensePopup.classList.remove('hidden');
-    viewData.classList.add('hidden');
-    input.classList.add('hidden');
-  });
-}
-function viewExpense() {
-  document.getElementById('viewexpense').addEventListener('click', function () {
-    console.log('test');
-  });
+function addExpenses(e) {
+  addExpensePopup.classList.remove('hidden');
+  viewData.classList.add('hidden');
+  input.classList.add('hidden');
+
+  for (let i = 0; i < row - 1; i++) {
+    if (persons[i].id == e.id) {
+      document.getElementById('popupname').innerHTML = '';
+      document.getElementById('popupname').innerHTML = persons[i].username;
+      document.getElementById('popupname').style.fontWeight = 'bold';
+    }
+  }
 }

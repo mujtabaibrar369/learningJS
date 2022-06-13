@@ -31,18 +31,18 @@
         </tr>
     </table>
   </section>
-  <div class="addexpensepopup hidden">
+  <div class="addexpensepopup hidden" id="addexpensepopup">
     <h3></h3>
+    <p id="popupname"></p>
       <input type="text" class="input" id="Expensetitle" placeholder="Expense tile">
       <h3></h3>
-      <input type="text" class="input" id="expenseamount" placeholder="Expense Amount">
+      <input type="number" min="0" class="input" id="expenseamount" placeholder="Expense Amount">
       <br />
       <h3></h3>
       <input type="date" class="input" id="expensedate" placeholder="Expense date">
       <br>
       <input  type="button" class="addexpensebutton" value="Add Expense" id="addexpensebutton">
       <input type="button" class="goback" id="goback" value="Cancel">
-
   </div>
   <input class="viewbutton" type="button" value="Manage Users" id="viewbutton">
     <div class="popup hidden" id="popup">

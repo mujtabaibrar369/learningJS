@@ -170,3 +170,14 @@ div.addexpensepopup {
   color: white;
   margin-left: 45%;
 }
+#addexpensebutton {
+  width: 100px;
+  height: 30px;
+  float: right;
+  background-color: purple;
+  margin-top: 5px;
+  margin-right: 10px;
+  text-align: center;
+  color: white;
+  margin-left: 45%;
+}
