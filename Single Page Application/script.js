@@ -81,12 +81,31 @@ function addExpenses(e) {
   addExpensePopup.classList.remove('hidden');
   viewData.classList.add('hidden');
   input.classList.add('hidden');
-
-  for (let i = 0; i < row - 1; i++) {
-    if (persons[i].id == e.id) {
-      document.getElementById('popupname').innerHTML = '';
-      document.getElementById('popupname').innerHTML = persons[i].username;
-      document.getElementById('popupname').style.fontWeight = 'bold';
-    }
-  }
+  document
+    .getElementById('addexpensebutton')
+    .addEventListener('click', function () {
+      let exptitle = document.getElementById('Expensetitle').value;
+      let expamount = document.getElementById('expenseamount').value;
+      let expdate = document.getElementById('expensedate').value;
+      if (exptitle == '' || expamount == '' || expdate == '') {
+        overlay.classList.remove('hidden');
+        errorPopup.classList.remove('hidden');
+      } else {
+        let Exp = {
+          expenseTitle: exptitle,
+          expenseAmount: expamount,
+          expenseDate: expdate,
+        };
+        for (let i = 0; i < row - 1; i++) {
+          if (persons[i].id == e.id) {
+            persons[i].expenses.push(Exp);
+            console.log(persons[i]);
+          }
+        }
+        document.getElementById('Expensetitle').value = '';
+        document.getElementById('expenseamount').value = '';
+        document.getElementById('expensedate').value = '';
+      }
+      console.log('test');
+    });
 }

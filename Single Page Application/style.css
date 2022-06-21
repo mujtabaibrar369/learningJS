@@ -51,10 +51,6 @@ input.button {
   background-color: #f2f2f2;
 }
 
-/* #customers tr:hover {
-    background-color: #ddd;
-  } */
-
 #customers th {
   padding-top: 12px;
   padding-bottom: 12px;
@@ -180,4 +176,33 @@ div.addexpensepopup {
   text-align: center;
   color: white;
   margin-left: 45%;
+}
+#Expenses {
+  margin-top: 13px;
+  border-collapse: collapse;
+  padding-top: 10px;
+  background-color: aliceblue;
+  position: relative;
+  width: 700px;
+  height: auto;
+  margin-left: 25%;
+  border-radius: 25px;
+}
+
+#Expenses td,
+#Expenses th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#Expenses tr {
+  background-color: #f2f2f2;
+}
+
+#Expenses th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: purple;
+  color: white;
 }
