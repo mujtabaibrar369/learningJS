@@ -206,3 +206,14 @@ div.addexpensepopup {
   background-color: purple;
   color: white;
 }
+#closeExpense {
+  width: 80px;
+  height: 30px;
+  float: right;
+  background-color: purple;
+  margin-top: 5px;
+  margin-right: 10px;
+  text-align: center;
+  color: white;
+  margin-left: 45%;
+}

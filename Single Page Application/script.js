@@ -4,8 +4,10 @@ const overlay = document.querySelector('.overlay');
 let addExpensePopup = document.querySelector('.addexpensepopup');
 const input = document.getElementById('form');
 let row = 1;
+let counterExpense = 1;
 let persons = [];
 let display = document.getElementById('customers');
+let expenseTable = document.getElementById('Expenses');
 document.getElementById('button').addEventListener('click', function () {
   let person = {
     id: Math.floor(Math.random() * 1000),
@@ -99,9 +101,10 @@ function addExpenses(e) {
         for (let i = 0; i < row - 1; i++) {
           if (persons[i].id == e.id) {
             persons[i].expenses.push(Exp);
-            console.log(persons[i]);
           }
         }
+
+        counterExpense++;
         document.getElementById('Expensetitle').value = '';
         document.getElementById('expenseamount').value = '';
         document.getElementById('expensedate').value = '';
@@ -109,3 +112,33 @@ function addExpenses(e) {
       console.log('test');
     });
 }
+function viewExpense(e) {
+  for (let i = 0; i < row - 1; i++) {
+    if (persons[i].id == e.id) {
+      let temp = persons[i].expenses;
+      if (persons[i].expenses.length > 0) {
+        for (let j = 0; j < persons[i].expenses.length; j++) {
+          let newRow = expenseTable.insertRow(j + 1);
+          let cell1 = newRow.insertCell(0);
+          let cell2 = newRow.insertCell(1);
+          let cell3 = newRow.insertCell(2);
+          cell1.innerHTML = temp[j].expenseTitle;
+          cell2.innerHTML = temp[j].expenseAmount;
+          cell3.innerHTML = temp[j].expenseDate;
+        }
+      }
+    }
+  }
+  document.getElementById('viewbutton').classList.add('hidden');
+  document.getElementById('closeExpense').classList.remove('hidden');
+  expenseTable.classList.remove('hidden');
+  viewData.classList.add('hidden');
+  input.classList.add('hidden');
+}
+document.getElementById('closeExpense').addEventListener('click', function () {
+  document.getElementById('viewbutton').classList.remove('hidden');
+  document.getElementById('closeExpense').classList.add('hidden');
+  expenseTable.classList.remove('hidden');
+  viewData.classList.remove('hidden');
+  input.classList.remove('hidden');
+});
