@@ -80,6 +80,7 @@ function dynamicallySearch() {
   }
 }
 function addExpenses(e) {
+  expenseTable.classList.add('hidden');
   addExpensePopup.classList.remove('hidden');
   viewData.classList.add('hidden');
   input.classList.add('hidden');
