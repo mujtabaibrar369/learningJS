@@ -1,0 +1,63 @@
+<!doctype html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="inputblock hidden" id="form">
+      <h3>Name</h3>
+      <input type="text" class="input" id="name" placeholder="Name">
+      <h3>Age</h3>
+      <input type="text" class="input" id="age" placeholder="Age">
+      <br />
+      <h3>Income</h3>
+      <input type="text" class="input" id="income" placeholder="Income">
+      <br>
+      <input class="addbutton" type="button" value="Add User" id="button">
+      <input type="button" class="back" id="back" value="back">
+    </div> 
+    <section class="data">
+      <input type="button" class="adduser" id="adduser" value="Add a person">
+        <input type="text" id="myInput"  placeholder="Search" title="Type in a name" onkeyup="dynamicallySearch()">
+    <table id="customers" class="customers">
+        <tr>
+          <th>ID</td>
+          <th>Name</td>
+          <th>Age</td>
+          <th>Income</th>
+          <th>Expense</th>
+          <th>Actions</th>
+        </tr>
+    </table>
+  </section>
+  <div class="addexpensepopup hidden" id="addexpensepopup">
+      <input type="text" class="input" id="Expensetitle" placeholder="Expense tile">
+      <h3></h3>
+      <input type="number" min="0" class="input" id="expenseamount" placeholder="Expense Amount">
+      <br />
+      <h3></h3>
+      <input type="date" class="input" id="expensedate" placeholder="Expense date">
+      <br>
+      <input  type="button" class="addexpensebutton" value="Add Expense" id="addexpensebutton">
+      <input type="button" class="goback" id="goback" value="Cancel">
+  </div>
+    <div class="popup hidden" id="popup">
+      <header>
+      </header>
+      <p>Error! Invalid Input</p>
+      <input type="button" class="popupbutton" id="popupbutton" value="close">
+    </div>
+    <table id="Expenses" class="Expenses hidden">
+        <input type="button" class="closeExpense hidden" id="closeExpense" value="Cancel">
+        <tr>
+          <th>Title</td>
+          <th>Expesne Amount</td>
+          <th>Date</td>
+        </tr>
+    </table>
+    <div class="overlay hidden"></div>
+    <script src="script.js"></script>
+  </body>
+</html>
